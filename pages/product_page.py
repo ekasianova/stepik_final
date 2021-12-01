@@ -13,7 +13,6 @@ class ProductPage(BasePage):
         self.slould_be_same_name()
         self.should_be_same_price()
         
-        
     def should_be_adding_button(self):
         assert self.is_element_present(*ProductPageLocators.ADD_BUTTON), "Login field is not presented"
         
