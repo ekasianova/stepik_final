@@ -9,9 +9,10 @@ class ProductPage(BasePage):
         self.should_be_adding_button()
         self.browser.find_element(*ProductPageLocators.ADD_BUTTON).click()
         self.solve_quiz_and_get_code()
-        time.sleep(2)
+        #time.sleep(2)
         self.slould_be_same_name()
         self.should_be_same_price()
+        
         
     def should_be_adding_button(self):
         assert self.is_element_present(*ProductPageLocators.ADD_BUTTON), "Login field is not presented"
@@ -25,3 +26,10 @@ class ProductPage(BasePage):
         productPrice = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         addedProductPrice = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL).text
         assert productPrice == addedProductPrice, f"Actual product name{productPrice}, added{addedProductPrice}"
+    
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADDED_NAME), "Success message is presented, but should not be"
+
+    
+    def should_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.ADDED_NAME), "Success message is disappeared, but should not be"
