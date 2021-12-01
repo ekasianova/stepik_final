@@ -9,7 +9,6 @@ class BasePageLocators():
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     
-    
 class LoginPageLocators():
     LOGIN_FIELD = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FIELD = (By.CSS_SELECTOR, "#register_form")
@@ -24,7 +23,6 @@ class ProductPageLocators():
     PRODUCT_PRICE = (By.CSS_SELECTOR, "div.product_main p.price_color")
     ADDED_NAME = (By.CSS_SELECTOR, "#messages div.alertinner strong")
     BASKET_TOTAL = (By.CSS_SELECTOR, "#messages div.alertinner p strong")
-
-
+    
 class BacketLocators():
     BASKET_SUMMARY = (By.CSS_SELECTOR, "div#content_inner form.basket_summary")
